@@ -129,6 +129,8 @@ char	*get_next_line(int fd)
 		free(str);
 		str = get_next_line(fd);
 		i++;
+  		if (str == NULL)
+    			printf("line %d: %s", i, str);
 	}
 	close(fd);
 	return (0);
